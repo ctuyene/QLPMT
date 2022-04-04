@@ -1,0 +1,15 @@
+D:\HK6\pttkht\QLPMT\QLPMT\bin\Debug\QLPMT.exe.config
+D:\HK6\pttkht\QLPMT\QLPMT\bin\Debug\QLPMT.exe
+D:\HK6\pttkht\QLPMT\QLPMT\bin\Debug\QLPMT.pdb
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.SuggestedBindingRedirects.cache
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form1.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Properties.Resources.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.GenerateResource.cache
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.CoreCompileInputs.cache
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.exe
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.pdb
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form2.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form3.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Home.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.AssemblyReference.cache
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form5.resources
