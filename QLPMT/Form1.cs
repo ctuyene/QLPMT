@@ -117,5 +117,10 @@ namespace QLPMT
         {
 
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+           // cbxBenhNhan.Text = 
+        }
     }
 }
