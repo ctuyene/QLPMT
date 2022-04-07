@@ -11,13 +11,18 @@ using System.Windows.Forms;
 
 namespace QLPMT
 {
-    public partial class Form1 : Form
+    public partial class DanhSachKhamBenh : Form
     {
         string strCon = @"Data Source=DESKTOP-NPJA2V7\TUYENCHAU;Initial Catalog=QLPMT;Integrated Security=True";
         SqlConnection sqlcon = null;
-        public Form1()
+        private const string _idPrefix = "BN";
+
+        public DanhSachKhamBenh()
         {
             InitializeComponent();
+        }
+        void getData()
+        {
             if (sqlcon == null)
             {
                 sqlcon = new SqlConnection(strCon);
@@ -31,6 +36,7 @@ namespace QLPMT
             sqlCommand.CommandText = "select * from BENHNHAN";
             sqlCommand.Connection = sqlcon;
             SqlDataReader reader = sqlCommand.ExecuteReader();
+            danhSachDKKB.Items.Clear();
             while (reader.Read())
             {
                 string maBN = reader.GetString(0);
@@ -54,12 +60,11 @@ namespace QLPMT
                 }
                 lv.SubItems.Add(diachi);
                 lv.SubItems.Add(sdt);
-
                 danhSachDKKB.Items.Add(lv);
             }
             reader.Close();
+            soBenhNhanCount.Text = danhSachDKKB.Items.Count.ToString();
         }
-
             private void label1_Click(object sender, EventArgs e)
         {
             
@@ -67,33 +72,7 @@ namespace QLPMT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (sqlcon == null)
-            {
-                sqlcon = new SqlConnection(strCon);
-            }
-            if (sqlcon.State == ConnectionState.Closed)
-            {
-                sqlcon.Open();
-            }
-            string tenBN = hoTenNhap.Text.Trim();
-            string gioiTinh=gioiTinhNhap.Text.Trim();  
-            string diachi=diaChiNhap.Text.Trim();
-            string ngaysinh = ngaySinhNhap.Text.Trim();
-            string sdt = sdtNhap.Text.Trim();
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "insert into BENHNHAN values(2000,'ádasd','1997-10-15 00:00:00','true','khu B','23994333','false')";
-            sqlCommand.Connection = sqlcon;
-            int kq = sqlCommand.ExecuteNonQuery();
-            if (kq == 0)
-            {
-                MessageBox.Show("Thêm thành công");
-             
-            }
-            else
-            {
-                MessageBox.Show("Không thành công");
-            }
+           
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -105,25 +84,37 @@ namespace QLPMT
             {
                 sqlcon.Open();
             }
+            string id = AutoGenerateID();
             string tenBN = hoTenNhap.Text.Trim();
-            string gioiTinh = gioiTinhNhap.Text.Trim();
+            string gioiTinh;
+            if (gioiTinhNhap.Text.Trim() == "Nữ")
+            {
+                 gioiTinh = "true";
+
+            }
+            else
+            {
+                gioiTinh = "false";
+            }
             string diachi = diaChiNhap.Text.Trim();
             string ngaysinh = ngaySinhNhap.Text.Trim();
             string sdt = sdtNhap.Text.Trim();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "insert into BENHNHAN values(2000,'ádasd','1997-10-15 00:00:00','true','khu B','23994333','false')";
+            sqlCommand.CommandText = "insert into BENHNHAN values('"+id+"',N'"+tenBN+"','1997-10-15 00:00:00',N'" + gioiTinh + "',N'" + diachi + "','"+sdt+"','false')";
             sqlCommand.Connection = sqlcon;
             int kq = sqlCommand.ExecuteNonQuery();
-            if (kq == 0)
+
+            if (kq != 0)
             {
                 MessageBox.Show("Thêm thành công");
-
+                getData();
             }
             else
             {
                 MessageBox.Show("Không thành công");
             }
+            ClearTextBox();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -183,7 +174,7 @@ namespace QLPMT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            getData();
         }
 
         private void quảnLýPhiếuKhámBệnhToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,7 +203,32 @@ namespace QLPMT
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-           // cbxBenhNhan.Text = 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        public string AutoGenerateID()
+        {
+            return _idPrefix + (danhSachDKKB.Items.Count + 1).ToString("D5");
+        }
+        public void ClearTextBox()
+        {
+            hoTenNhap.Clear();
+            gioiTinhNhap.Clear();
+            diaChiNhap.Clear();
+            sdtNhap.Clear();
+        }
+
+        private void danhSachDKKB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

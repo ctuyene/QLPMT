@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Danh sách khám bệnh"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Danh sách khám bệnh"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Quản lý bệnh nhân"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Quản lý bệnh nhân"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Quản lý phiếu khám bệnh"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Quản lý phiếu khám bệnh"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Báo cáo doanh thu"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Báo cáo doanh thu"}, -1, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menu = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,8 +48,6 @@
             // menu
             // 
             this.menu.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.menu.AutoArrange = false;
             this.menu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
@@ -60,13 +58,13 @@
             listViewItem3,
             listViewItem4});
             this.menu.LabelEdit = true;
-            this.menu.Location = new System.Drawing.Point(12, 12);
+            this.menu.Location = new System.Drawing.Point(6, 12);
             this.menu.Margin = new System.Windows.Forms.Padding(8);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(198, 723);
+            this.menu.Size = new System.Drawing.Size(219, 723);
             this.menu.TabIndex = 0;
             this.menu.UseCompatibleStateImageBehavior = false;
-            this.menu.View = System.Windows.Forms.View.SmallIcon;
+            this.menu.View = System.Windows.Forms.View.Tile;
             this.menu.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // panel1
@@ -99,8 +97,8 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1191, 747);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);

@@ -1,6 +1,8 @@
-﻿namespace QLPMT
+﻿using System.Windows.Forms;
+
+namespace QLPMT
 {
-    partial class Form1
+    partial class DanhSachKhamBenh
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachKhamBenh));
             this.label1 = new System.Windows.Forms.Label();
             this.soBenhNhan = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,7 +62,8 @@
             this.diaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.searchDateTime = new System.Windows.Forms.DateTimePicker();
+            this.soBenhNhanCount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,11 +136,12 @@
             this.cbxBenhNhan.FormattingEnabled = true;
             this.cbxBenhNhan.IntegralHeight = false;
             this.cbxBenhNhan.ItemHeight = 25;
-            this.cbxBenhNhan.Location = new System.Drawing.Point(188, 92);
+            this.cbxBenhNhan.Location = new System.Drawing.Point(171, 91);
             this.cbxBenhNhan.Margin = new System.Windows.Forms.Padding(8);
             this.cbxBenhNhan.Name = "cbxBenhNhan";
             this.cbxBenhNhan.Size = new System.Drawing.Size(381, 31);
             this.cbxBenhNhan.TabIndex = 2;
+            this.cbxBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cbxBenhNhan_SelectedIndexChanged);
             // 
             // labelBenhNhan
             // 
@@ -186,17 +190,17 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(643, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 313);
+            this.groupBox2.Size = new System.Drawing.Size(585, 460);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
             // checkBox1
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(215, 182);
+            this.checkBox1.Location = new System.Drawing.Point(215, 329);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(209, 36);
             this.checkBox1.TabIndex = 15;
@@ -245,13 +249,13 @@
             // 
             // btnThemBN
             // 
-            this.btnThemBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnThemBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemBN.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnThemBN.FlatAppearance.BorderSize = 0;
             this.btnThemBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemBN.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnThemBN.Location = new System.Drawing.Point(252, 229);
+            this.btnThemBN.Location = new System.Drawing.Point(252, 376);
             this.btnThemBN.Margin = new System.Windows.Forms.Padding(8);
             this.btnThemBN.Name = "btnThemBN";
             this.btnThemBN.Size = new System.Drawing.Size(183, 41);
@@ -363,7 +367,7 @@
             // labelNhapThongTinBenhNhan
             // 
             this.labelNhapThongTinBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNhapThongTinBenhNhan.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelNhapThongTinBenhNhan.ForeColor = System.Drawing.Color.DimGray;
             this.labelNhapThongTinBenhNhan.Location = new System.Drawing.Point(174, 25);
             this.labelNhapThongTinBenhNhan.Name = "labelNhapThongTinBenhNhan";
             this.labelNhapThongTinBenhNhan.Size = new System.Drawing.Size(327, 41);
@@ -378,16 +382,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.danhSachDKKB);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.searchDateTime);
             this.groupBox3.Location = new System.Drawing.Point(18, 100);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox3.Size = new System.Drawing.Size(619, 515);
+            this.groupBox3.Size = new System.Drawing.Size(619, 662);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
             // danhSachDKKB
             // 
+            this.danhSachDKKB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.danhSachDKKB.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.maBN,
             this.tenBenhNhan,
@@ -398,34 +405,41 @@
             this.danhSachDKKB.HideSelection = false;
             this.danhSachDKKB.Location = new System.Drawing.Point(5, 92);
             this.danhSachDKKB.Name = "danhSachDKKB";
-            this.danhSachDKKB.Size = new System.Drawing.Size(614, 414);
+            this.danhSachDKKB.Size = new System.Drawing.Size(614, 561);
             this.danhSachDKKB.TabIndex = 9;
             this.danhSachDKKB.UseCompatibleStateImageBehavior = false;
             this.danhSachDKKB.View = System.Windows.Forms.View.Details;
+            this.danhSachDKKB.SelectedIndexChanged += new System.EventHandler(this.danhSachDKKB_SelectedIndexChanged);
             // 
             // maBN
             // 
             this.maBN.Text = "Mã Bệnh Nhân";
+            this.maBN.Width = 100;
             // 
             // tenBenhNhan
             // 
             this.tenBenhNhan.Text = "Tên Bệnh Nhân";
+            this.tenBenhNhan.Width = 110;
             // 
             // ngaySinh
             // 
             this.ngaySinh.Text = "Ngày sinh";
+            this.ngaySinh.Width = 90;
             // 
             // gioiTinh
             // 
             this.gioiTinh.Text = "Giới tính";
+            this.gioiTinh.Width = 89;
             // 
             // diaChi
             // 
             this.diaChi.Text = "Địa chỉ";
+            this.diaChi.Width = 130;
             // 
             // sdt
             // 
             this.sdt.Text = "Số điện thoại";
+            this.sdt.Width = 100;
             // 
             // label2
             // 
@@ -441,23 +455,36 @@
             this.label2.Text = "Danh sách đăng ký khám bệnh";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateTimePicker1
+            // searchDateTime
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.searchDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 7;
+            this.searchDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.searchDateTime.Location = new System.Drawing.Point(1, 10);
+            this.searchDateTime.Name = "searchDateTime";
+            this.searchDateTime.Size = new System.Drawing.Size(186, 27);
+            this.searchDateTime.TabIndex = 7;
+            this.searchDateTime.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // Form1
+            // soBenhNhanCount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.soBenhNhanCount.AutoSize = true;
+            this.soBenhNhanCount.BackColor = System.Drawing.Color.White;
+            this.soBenhNhanCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soBenhNhanCount.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.soBenhNhanCount.Location = new System.Drawing.Point(287, 53);
+            this.soBenhNhanCount.Name = "soBenhNhanCount";
+            this.soBenhNhanCount.Size = new System.Drawing.Size(0, 29);
+            this.soBenhNhanCount.TabIndex = 11;
+            // 
+            // DanhSachKhamBenh
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1240, 627);
+            this.ClientSize = new System.Drawing.Size(1240, 774);
+            this.Controls.Add(this.soBenhNhanCount);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -465,7 +492,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "DanhSachKhamBenh";
             this.Text = "Quản lý phòng mạch tư";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -473,6 +500,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -486,7 +514,7 @@
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.ComboBox cbxBenhNhan;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker searchDateTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox hoTenNhap;
         private System.Windows.Forms.Label label3;
@@ -510,6 +538,7 @@
         private System.Windows.Forms.ColumnHeader gioiTinh;
         private System.Windows.Forms.ColumnHeader diaChi;
         private System.Windows.Forms.ColumnHeader sdt;
+        private System.Windows.Forms.Label soBenhNhanCount;
     }
 }
 

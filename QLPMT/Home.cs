@@ -35,14 +35,14 @@ namespace QLPMT
             {
                 case 0:
                     panel1.Controls.Clear();
-                    Form1 form1 = new Form1() { TopLevel = false, TopMost = true };
+                    DanhSachKhamBenh form1 = new DanhSachKhamBenh() { TopLevel = false, TopMost = true };
                     panel1.Controls.Add(form1);
                     form1.Show();
                     form1.WindowState = FormWindowState.Maximized;
                     break;
                 case 1:
                     panel1.Controls.Clear();
-                    Form2 form2 = new Form2() { TopLevel = false, TopMost = true };
+                    QuanLyBenhNhan form2 = new QuanLyBenhNhan() { TopLevel = false, TopMost = true };
                     panel1.Controls.Add(form2);
                     form2.Show();
                     form2.WindowState = FormWindowState.Maximized;
