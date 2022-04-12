@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLPMT
 {
-    public partial class Form3 : Form
+    public partial class PhieuKhamBenh : Form
     {
-        public Form3()
+        public PhieuKhamBenh()
         {
             InitializeComponent();
         }
@@ -28,6 +28,11 @@ namespace QLPMT
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }

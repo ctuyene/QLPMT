@@ -86,6 +86,7 @@ namespace QLPMT
             }
             string id = AutoGenerateID();
             string tenBN = hoTenNhap.Text.Trim();
+
             string gioiTinh;
             if (gioiTinhNhap.Text.Trim() == "Nữ")
             {
@@ -186,7 +187,7 @@ namespace QLPMT
 
         private void quảnLýBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
+            PhieuKhamBenh f = new PhieuKhamBenh();
             // f.MdiParent = this;
             f.Show();
         }
@@ -211,7 +212,14 @@ namespace QLPMT
         }
         public string AutoGenerateID()
         {
-            return _idPrefix + (danhSachDKKB.Items.Count + 1).ToString("D5");
+            String lastID = danhSachDKKB.Items[danhSachDKKB.Items.Count-1].Text;
+            string[] tokens = lastID.Split(new[] { "BN" }, StringSplitOptions.None);
+
+            
+
+            return _idPrefix + (Int32.Parse( tokens[1])+1).ToString("D5");
+            
+            //return _idPrefix + (danhSachDKKB.Items[danhSachDKKB.Items.Count] + 1).ToString("D5");
         }
         public void ClearTextBox()
         {

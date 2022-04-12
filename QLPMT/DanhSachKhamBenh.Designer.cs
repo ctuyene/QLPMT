@@ -86,7 +86,7 @@ namespace QLPMT
             | System.Windows.Forms.AnchorStyles.Right)));
             this.soBenhNhan.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.soBenhNhan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soBenhNhan.Location = new System.Drawing.Point(14, 49);
+            this.soBenhNhan.Location = new System.Drawing.Point(18, 49);
             this.soBenhNhan.Margin = new System.Windows.Forms.Padding(8);
             this.soBenhNhan.Name = "soBenhNhan";
             this.soBenhNhan.Size = new System.Drawing.Size(1214, 40);
@@ -103,10 +103,10 @@ namespace QLPMT
             this.groupBox1.Controls.Add(this.cbxBenhNhan);
             this.groupBox1.Controls.Add(this.labelBenhNhan);
             this.groupBox1.Controls.Add(this.labelDkKham);
-            this.groupBox1.Location = new System.Drawing.Point(643, 100);
+            this.groupBox1.Location = new System.Drawing.Point(653, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox1.Size = new System.Drawing.Size(585, 196);
+            this.groupBox1.Size = new System.Drawing.Size(575, 196);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -121,7 +121,7 @@ namespace QLPMT
             this.btnDangKy.Location = new System.Drawing.Point(252, 139);
             this.btnDangKy.Margin = new System.Windows.Forms.Padding(8);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(183, 41);
+            this.btnDangKy.Size = new System.Drawing.Size(173, 41);
             this.btnDangKy.TabIndex = 3;
             this.btnDangKy.Text = "Đăng Ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
@@ -139,7 +139,7 @@ namespace QLPMT
             this.cbxBenhNhan.Location = new System.Drawing.Point(171, 91);
             this.cbxBenhNhan.Margin = new System.Windows.Forms.Padding(8);
             this.cbxBenhNhan.Name = "cbxBenhNhan";
-            this.cbxBenhNhan.Size = new System.Drawing.Size(381, 31);
+            this.cbxBenhNhan.Size = new System.Drawing.Size(371, 31);
             this.cbxBenhNhan.TabIndex = 2;
             this.cbxBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cbxBenhNhan_SelectedIndexChanged);
             // 
@@ -188,9 +188,9 @@ namespace QLPMT
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.labelNhapThongTinBenhNhan);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(643, 302);
+            this.groupBox2.Location = new System.Drawing.Point(653, 308);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(585, 460);
+            this.groupBox2.Size = new System.Drawing.Size(575, 445);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
@@ -202,7 +202,7 @@ namespace QLPMT
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(215, 329);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(209, 36);
+            this.checkBox1.Size = new System.Drawing.Size(199, 36);
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Đăng ký khám bệnh";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -258,7 +258,7 @@ namespace QLPMT
             this.btnThemBN.Location = new System.Drawing.Point(252, 376);
             this.btnThemBN.Margin = new System.Windows.Forms.Padding(8);
             this.btnThemBN.Name = "btnThemBN";
-            this.btnThemBN.Size = new System.Drawing.Size(183, 41);
+            this.btnThemBN.Size = new System.Drawing.Size(173, 41);
             this.btnThemBN.TabIndex = 4;
             this.btnThemBN.Text = "Thêm Bệnh nhân";
             this.btnThemBN.UseVisualStyleBackColor = false;
@@ -368,7 +368,7 @@ namespace QLPMT
             // 
             this.labelNhapThongTinBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNhapThongTinBenhNhan.ForeColor = System.Drawing.Color.DimGray;
-            this.labelNhapThongTinBenhNhan.Location = new System.Drawing.Point(174, 25);
+            this.labelNhapThongTinBenhNhan.Location = new System.Drawing.Point(156, 25);
             this.labelNhapThongTinBenhNhan.Name = "labelNhapThongTinBenhNhan";
             this.labelNhapThongTinBenhNhan.Size = new System.Drawing.Size(327, 41);
             this.labelNhapThongTinBenhNhan.TabIndex = 4;
@@ -402,6 +402,7 @@ namespace QLPMT
             this.gioiTinh,
             this.diaChi,
             this.sdt});
+            this.danhSachDKKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.danhSachDKKB.HideSelection = false;
             this.danhSachDKKB.Location = new System.Drawing.Point(5, 92);
             this.danhSachDKKB.Name = "danhSachDKKB";
@@ -414,12 +415,12 @@ namespace QLPMT
             // maBN
             // 
             this.maBN.Text = "Mã Bệnh Nhân";
-            this.maBN.Width = 100;
+            this.maBN.Width = 175;
             // 
             // tenBenhNhan
             // 
             this.tenBenhNhan.Text = "Tên Bệnh Nhân";
-            this.tenBenhNhan.Width = 110;
+            this.tenBenhNhan.Width = 182;
             // 
             // ngaySinh
             // 
@@ -482,6 +483,7 @@ namespace QLPMT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1240, 774);
             this.Controls.Add(this.soBenhNhanCount);

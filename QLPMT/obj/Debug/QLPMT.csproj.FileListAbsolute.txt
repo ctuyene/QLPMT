@@ -7,9 +7,10 @@ D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.GenerateResource.cache
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.CoreCompileInputs.cache
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.exe
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.pdb
-D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form3.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Home.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.csproj.AssemblyReference.cache
-D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.Form5.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.DanhSachKhamBenh.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.QuanLyBenhNhan.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.PhieuKhamBenh.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.BaoCaoDoanhThu.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.HoaDon.resources

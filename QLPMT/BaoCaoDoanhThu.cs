@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLPMT
 {
-    public partial class Form5 : Form
+    public partial class BaoCaoDoanhThu : Form
     {
-        public Form5()
+        public BaoCaoDoanhThu()
         {
             InitializeComponent();
         }
