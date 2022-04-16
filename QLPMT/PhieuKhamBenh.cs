@@ -36,5 +36,20 @@ namespace QLPMT
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var myForm = new HoaDon();
+            myForm.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

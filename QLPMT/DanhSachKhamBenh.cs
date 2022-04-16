@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace QLPMT
 {
@@ -65,14 +66,14 @@ namespace QLPMT
             reader.Close();
             soBenhNhanCount.Text = danhSachDKKB.Items.Count.ToString();
         }
-            private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -90,7 +91,7 @@ namespace QLPMT
             string gioiTinh;
             if (gioiTinhNhap.Text.Trim() == "Nữ")
             {
-                 gioiTinh = "true";
+                gioiTinh = "true";
 
             }
             else
@@ -102,7 +103,7 @@ namespace QLPMT
             string sdt = sdtNhap.Text.Trim();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "insert into BENHNHAN values('"+id+"',N'"+tenBN+"','1997-10-15 00:00:00',N'" + gioiTinh + "',N'" + diachi + "','"+sdt+"','false')";
+            sqlCommand.CommandText = "insert into BENHNHAN values('" + id + "',N'" + tenBN + "','1997-10-15 00:00:00',N'" + gioiTinh + "',N'" + diachi + "','" + sdt + "','false')";
             sqlCommand.Connection = sqlcon;
             int kq = sqlCommand.ExecuteNonQuery();
 
@@ -160,7 +161,7 @@ namespace QLPMT
 
         private void soBenhNhan_Click(object sender, EventArgs e)
         {
-                
+
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -176,12 +177,64 @@ namespace QLPMT
         private void Form1_Load(object sender, EventArgs e)
         {
             getData();
-        }
+            //if (sqlcon == null)
+            //{
+            //    sqlcon = new SqlConnection(strCon);
+            //}
+            //if (sqlcon.State == ConnectionState.Closed)
+            //{
+            //    sqlcon.Open();
+            //}
+            //string sqlQuerry = "Select TenBenhNhan from BENHNHAN";
+            //SqlCommand sqlCommand = new SqlCommand();
 
+            //sqlCommand = new SqlCommand(sqlQuerry, sqlcon);
+            //SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+            //DataTable dt = new DataTable();
+            //adapter.Fill(dt);
+
+
+
+
+            //sqlcon.Close();
+            cbxBenhNhan.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbxBenhNhan.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection combData = new AutoCompleteStringCollection();
+            getBenhNhan(combData);
+            cbxBenhNhan.AutoCompleteCustomSource = combData;
+        }
+        void getBenhNhan(AutoCompleteStringCollection dataCollection)
+        {
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            string sql = "SELECT DISTINCT [TenBenhNhan] FROM [BENHNHAN]";
+            connection = new SqlConnection(strCon);
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds);
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    dataCollection.Add(row[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not open connection ! ");
+            }
+        }
+        
         private void quảnLýPhiếuKhámBệnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Home f = new Home();
-           // f.MdiParent = this;
+            // f.MdiParent = this;
             f.Show();
         }
 
@@ -212,13 +265,19 @@ namespace QLPMT
         }
         public string AutoGenerateID()
         {
-            String lastID = danhSachDKKB.Items[danhSachDKKB.Items.Count-1].Text;
+            String lastID = "BN000000";
+
+            if (danhSachDKKB.Items.Count > 0)
+            {
+                lastID = danhSachDKKB.Items[danhSachDKKB.Items.Count - 1].Text;
+            }
+
             string[] tokens = lastID.Split(new[] { "BN" }, StringSplitOptions.None);
 
-            
 
-            return _idPrefix + (Int32.Parse( tokens[1])+1).ToString("D5");
-            
+
+            return _idPrefix + (Int32.Parse(tokens[1]) + 1).ToString("D5");
+
             //return _idPrefix + (danhSachDKKB.Items[danhSachDKKB.Items.Count] + 1).ToString("D5");
         }
         public void ClearTextBox()

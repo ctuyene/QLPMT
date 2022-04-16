@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,18 @@
     </Compile>
     <Compile Include="DanhSachKhamBenh.Designer.cs">
       <DependentUpon>DanhSachKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhapThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapThuoc.Designer.cs">
+      <DependentUpon>NhapThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThuoc.Designer.cs">
+      <DependentUpon>QuanLyThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
       <SubType>Form</SubType>
@@ -86,6 +99,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DanhSachKhamBenh.resx">
       <DependentUpon>DanhSachKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapThuoc.resx">
+      <DependentUpon>NhapThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThuoc.resx">
+      <DependentUpon>QuanLyThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>

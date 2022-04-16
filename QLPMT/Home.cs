@@ -75,10 +75,10 @@ namespace QLPMT
         private void btnQLT_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            PhieuKhamBenh form3 = new PhieuKhamBenh() { TopLevel = false, TopMost = true };
-            panel1.Controls.Add(form3);
-            form3.Show();
-            form3.WindowState = FormWindowState.Maximized;
+            quanLyThuoc form4 = new quanLyThuoc() { TopLevel = false, TopMost = true };
+            panel1.Controls.Add(form4);
+            form4.Show();
+            form4.WindowState = FormWindowState.Maximized;
         }
 
         private void btnBCDT_Click(object sender, EventArgs e)

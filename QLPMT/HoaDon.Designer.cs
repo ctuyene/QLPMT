@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDon));
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.lbNgayKham = new System.Windows.Forms.Label();
             this.lbTenBenhNhan = new System.Windows.Forms.Label();
@@ -44,14 +45,14 @@
             this.lbTieuDe.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lbTieuDe.Location = new System.Drawing.Point(28, 31);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(183, 39);
+            this.lbTieuDe.Size = new System.Drawing.Size(179, 38);
             this.lbTieuDe.TabIndex = 0;
             this.lbTieuDe.Text = "HÓA ĐƠN";
             // 
             // lbNgayKham
             // 
             this.lbNgayKham.AutoSize = true;
-            this.lbNgayKham.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lbNgayKham.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbNgayKham.Location = new System.Drawing.Point(51, 165);
             this.lbNgayKham.Name = "lbNgayKham";
             this.lbNgayKham.Size = new System.Drawing.Size(76, 16);
@@ -71,7 +72,7 @@
             // lbMaPhieuKhamBenh
             // 
             this.lbMaPhieuKhamBenh.AutoSize = true;
-            this.lbMaPhieuKhamBenh.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lbMaPhieuKhamBenh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbMaPhieuKhamBenh.Location = new System.Drawing.Point(51, 210);
             this.lbMaPhieuKhamBenh.Name = "lbMaPhieuKhamBenh";
             this.lbMaPhieuKhamBenh.Size = new System.Drawing.Size(131, 16);
@@ -81,22 +82,24 @@
             // lbTienKham
             // 
             this.lbTienKham.AutoSize = true;
-            this.lbTienKham.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lbTienKham.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbTienKham.Location = new System.Drawing.Point(51, 317);
             this.lbTienKham.Name = "lbTienKham";
             this.lbTienKham.Size = new System.Drawing.Size(70, 16);
             this.lbTienKham.TabIndex = 4;
             this.lbTienKham.Text = "Tiền khám";
+            this.lbTienKham.Click += new System.EventHandler(this.lbTienKham_Click);
             // 
             // lbTienThuoc
             // 
             this.lbTienThuoc.AutoSize = true;
-            this.lbTienThuoc.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lbTienThuoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbTienThuoc.Location = new System.Drawing.Point(51, 360);
             this.lbTienThuoc.Name = "lbTienThuoc";
             this.lbTienThuoc.Size = new System.Drawing.Size(69, 16);
             this.lbTienThuoc.TabIndex = 5;
             this.lbTienThuoc.Text = "Tiền thuốc";
+            this.lbTienThuoc.Click += new System.EventHandler(this.lbTienThuoc_Click);
             // 
             // lbThanhTien
             // 
@@ -120,8 +123,11 @@
             this.Controls.Add(this.lbTenBenhNhan);
             this.Controls.Add(this.lbNgayKham);
             this.Controls.Add(this.lbTieuDe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDon";
+            this.Load += new System.EventHandler(this.HoaDon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

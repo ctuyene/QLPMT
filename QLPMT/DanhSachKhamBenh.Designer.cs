@@ -131,6 +131,10 @@ namespace QLPMT
             // 
             this.cbxBenhNhan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxBenhNhan.AutoCompleteCustomSource.AddRange(new string[] {
+            "combData"});
+            this.cbxBenhNhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxBenhNhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbxBenhNhan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxBenhNhan.DropDownHeight = 130;
             this.cbxBenhNhan.FormattingEnabled = true;
@@ -213,6 +217,7 @@ namespace QLPMT
             this.comboBox1.CausesValidation = false;
             this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox1.DropDownHeight = 200;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
             this.comboBox1.ItemHeight = 20;
@@ -221,6 +226,7 @@ namespace QLPMT
             this.comboBox1.Size = new System.Drawing.Size(57, 26);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 14;
+            this.comboBox1.Text = "+84";
             // 
             // ngaySinhNhap
             // 
@@ -238,7 +244,7 @@ namespace QLPMT
             // sdtNhap
             // 
             this.sdtNhap.CausesValidation = false;
-            this.sdtNhap.Location = new System.Drawing.Point(252, 278);
+            this.sdtNhap.Location = new System.Drawing.Point(252, 274);
             this.sdtNhap.Margin = new System.Windows.Forms.Padding(8);
             this.sdtNhap.Multiline = true;
             this.sdtNhap.Name = "sdtNhap";

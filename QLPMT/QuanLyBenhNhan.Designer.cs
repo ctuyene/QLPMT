@@ -50,7 +50,6 @@
             this.tbxSDTBN = new System.Windows.Forms.TextBox();
             this.tbxDiaChiBN = new System.Windows.Forms.TextBox();
             this.tbxGioiTinhBN = new System.Windows.Forms.TextBox();
-            this.tbxMaBN = new System.Windows.Forms.TextBox();
             this.labelSĐT = new System.Windows.Forms.Label();
             this.labelDiaChi = new System.Windows.Forms.Label();
             this.labelGioiTinh = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.labelTenBN = new System.Windows.Forms.Label();
             this.labelMaBN = new System.Windows.Forms.Label();
             this.grbThongTinBN = new System.Windows.Forms.GroupBox();
+            this.tbMaBN = new System.Windows.Forms.TextBox();
             this.btnXoaBN = new System.Windows.Forms.Button();
             this.grbThongTinBN.SuspendLayout();
             this.SuspendLayout();
@@ -261,17 +261,6 @@
             this.tbxGioiTinhBN.Size = new System.Drawing.Size(216, 27);
             this.tbxGioiTinhBN.TabIndex = 23;
             // 
-            // tbxMaBN
-            // 
-            this.tbxMaBN.BackColor = System.Drawing.Color.White;
-            this.tbxMaBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMaBN.ForeColor = System.Drawing.Color.Black;
-            this.tbxMaBN.Location = new System.Drawing.Point(171, 66);
-            this.tbxMaBN.Name = "tbxMaBN";
-            this.tbxMaBN.ReadOnly = true;
-            this.tbxMaBN.Size = new System.Drawing.Size(216, 27);
-            this.tbxMaBN.TabIndex = 22;
-            // 
             // labelSĐT
             // 
             this.labelSĐT.AutoSize = true;
@@ -336,6 +325,7 @@
             // 
             this.grbThongTinBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbThongTinBN.Controls.Add(this.tbMaBN);
             this.grbThongTinBN.Controls.Add(this.btnCapNhat);
             this.grbThongTinBN.Controls.Add(this.tbxHoTenBN);
             this.grbThongTinBN.Controls.Add(this.btnXoaBN);
@@ -347,7 +337,6 @@
             this.grbThongTinBN.Controls.Add(this.labelNgaySinh);
             this.grbThongTinBN.Controls.Add(this.tbxGioiTinhBN);
             this.grbThongTinBN.Controls.Add(this.labelGioiTinh);
-            this.grbThongTinBN.Controls.Add(this.tbxMaBN);
             this.grbThongTinBN.Controls.Add(this.labelDiaChi);
             this.grbThongTinBN.Controls.Add(this.labelSĐT);
             this.grbThongTinBN.Location = new System.Drawing.Point(577, 199);
@@ -355,6 +344,17 @@
             this.grbThongTinBN.Size = new System.Drawing.Size(403, 423);
             this.grbThongTinBN.TabIndex = 30;
             this.grbThongTinBN.TabStop = false;
+            // 
+            // tbMaBN
+            // 
+            this.tbMaBN.BackColor = System.Drawing.Color.White;
+            this.tbMaBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaBN.ForeColor = System.Drawing.Color.Black;
+            this.tbMaBN.Location = new System.Drawing.Point(171, 67);
+            this.tbMaBN.Name = "tbMaBN";
+            this.tbMaBN.Size = new System.Drawing.Size(216, 27);
+            this.tbMaBN.TabIndex = 30;
+            this.tbMaBN.TextChanged += new System.EventHandler(this.tbMaBN_TextChanged);
             // 
             // btnXoaBN
             // 
@@ -419,7 +419,6 @@
         private System.Windows.Forms.TextBox tbxSDTBN;
         private System.Windows.Forms.TextBox tbxDiaChiBN;
         private System.Windows.Forms.TextBox tbxGioiTinhBN;
-        private System.Windows.Forms.TextBox tbxMaBN;
         private System.Windows.Forms.Label labelSĐT;
         private System.Windows.Forms.Label labelDiaChi;
         private System.Windows.Forms.Label labelGioiTinh;
@@ -428,5 +427,6 @@
         private System.Windows.Forms.Label labelMaBN;
         private System.Windows.Forms.GroupBox grbThongTinBN;
         private System.Windows.Forms.Button btnXoaBN;
+        private System.Windows.Forms.TextBox tbMaBN;
     }
 }

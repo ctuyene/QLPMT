@@ -42,7 +42,7 @@ namespace QLPMT
             
             ListViewItem lvi = listBenhNhan.SelectedItems[0];
 
-            tbxMaBN.Text = lvi.SubItems[0].Text;
+            tbMaBN.Text = lvi.SubItems[0].Text;
             tbxHoTenBN.Text = lvi.SubItems[1].Text;
             tbxNgaySinhBN.Text = lvi.SubItems[2].Text;
             tbxGioiTinhBN.Text=lvi.SubItems[3].Text;
@@ -73,7 +73,7 @@ namespace QLPMT
             }
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "update BENHNHAN set MaBenhNhan='"+ tbxMaBN.Text.Trim() + "',TenBenhNhan=N'"+ tbxHoTenBN.Text.Trim() + "',NgaySinh='" + tbxNgaySinhBN.Text.Trim() + "',GioiTinh=N'true',DiaChi=N'" + tbxDiaChiBN.Text.Trim() + "',SoDienThoai='" + tbxSDTBN.Text.Trim() + "' WHERE MaBenhNhan='"+tbxMaBN.Text.Trim()+"' ";
+            sqlCommand.CommandText = "update BENHNHAN set MaBenhNhan='"+ tbMaBN.Text.Trim() + "',TenBenhNhan=N'"+ tbxHoTenBN.Text.Trim() + "',NgaySinh='" + tbxNgaySinhBN.Text.Trim() + "',GioiTinh=N'true',DiaChi=N'" + tbxDiaChiBN.Text.Trim() + "',SoDienThoai='" + tbxSDTBN.Text.Trim() + "' WHERE MaBenhNhan='"+tbMaBN.Text.Trim()+"' ";
             sqlCommand.Connection = sqlcon;
             int kq = sqlCommand.ExecuteNonQuery();
 
@@ -147,12 +147,17 @@ namespace QLPMT
                 }
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.CommandText = "delete from BENHNHAN WHERE MaBenhNhan='" + tbxMaBN.Text.Trim() + "' ";
+                sqlCommand.CommandText = "delete from BENHNHAN WHERE MaBenhNhan='" + tbMaBN.Text.Trim() + "' ";
                 sqlCommand.Connection = sqlcon;
                  sqlCommand.ExecuteNonQuery();
                 getDanhSachBenhNhan();
 
             }
+        }
+
+        private void tbMaBN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

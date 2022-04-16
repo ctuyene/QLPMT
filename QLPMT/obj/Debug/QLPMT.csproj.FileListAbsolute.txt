@@ -14,3 +14,5 @@ D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.QuanLyBenhNhan.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.PhieuKhamBenh.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.BaoCaoDoanhThu.resources
 D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.HoaDon.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.quanLyThuoc.resources
+D:\HK6\pttkht\QLPMT\QLPMT\obj\Debug\QLPMT.NhapThuoc.resources
